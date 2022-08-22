@@ -1,0 +1,100 @@
+.assignment-type-cards{
+    color: #3c3c3c;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.assignment-type-indiv {
+    margin: 1.6em;
+    text-align: center;
+    padding-top: 1.3em;
+}
+
+.ass-num-card {
+    font-size: 20px;
+    margin-top: 1em;
+    height:6vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-title {
+    font-size:30px;
+}
+
+.card-item-1 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.card-item-2 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+.card-item-3 {
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+
+.card-item-1:hover{
+    transition-duration: .3s;
+    background-color: rgba(255, 254, 254, 0.918);
+}
+
+.card-item-2:hover{
+    transition-duration: .3s;
+    background-color: rgba(255, 254, 254, 0.918);
+}
+
+.card-item-3:hover{
+    transition-duration: .3s;
+    background-color: rgba(255, 254, 254, 0.918);
+}
+
+.input-field {
+    border: none;
+    color: #3c3c3c;
+    text-align: center;
+    margin: .05em;
+}
+.input-field:hover {
+    outline-style: solid;
+    outline-color: #3c3c3c;
+    outline-width: .05em;
+}
+
+.input-grid {
+    display:grid;
+    grid-template-columns: 7em 7em 7em;
+}
+
+.input-field:focus {
+    outline-style: solid;
+    outline-color: #3c3c3c;
+}
+
+.class-save-button {
+    color: dimgray;
+    background-color: #6bff9c;
+    width: 4vw;
+    margin: 1em;
+}
+
+.class-save-button:hover {
+    background-color:#00ff669c;
+    border-color:#3c3c3c;
+}
+
+.class-save-button:focus {
+    background-color:#00ff669c;
+    border-color:#3c3c3c;
+}
+
+.class-avg-card {
+    color: #3c3c3c;
+    width: 40vw;
+    margin: 1.1em;
+    position: relative;
+    left: 29vw;
+}

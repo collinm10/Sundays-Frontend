@@ -1,0 +1,37 @@
+.class-card-stuff {
+    color: #3c3c3c;
+    font-size: 20px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+.class-card {
+    margin: 2em;
+    text-align: center;
+    padding: 1em;
+    cursor: pointer;
+}
+
+.class-card:hover {
+    transition-duration: .3s;
+    background-color: lightgray;
+}
+.add-button {
+    background-color: transparent;
+    margin: 2em;
+    border-color: #5cc4ff  ;
+}
+
+.plus-image {
+    max-width: 5vw;
+    height: auto;
+}
+
+.card-link {
+    color: #3c3c3c;
+    text-decoration:none;
+}
+
+.card-link:hover{
+    color: #3c3c3c;
+}

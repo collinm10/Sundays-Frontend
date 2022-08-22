@@ -1,0 +1,36 @@
+.center{
+    justify-content: center;
+}
+
+.text-boxes {
+    max-width: 30vw;
+}
+
+.m-top {
+    margin-top: 5vh;
+}
+
+.login-flexbox {
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+}
+
+.padding {
+    padding: 1.7em;
+}
+
+.login-text {
+    color: #3c3c3c;
+}
+
+.sign-up-stuff {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1vh;
+}
+
+.m-left {
+    margin-left: 1.1em;
+}
