@@ -100,7 +100,7 @@ export const updateAssignment = async (assTypeId,assIndex, newData) => {
         const response = await axios.put('http://161.35.110.5:8000/update-assignment/',  {assTypeId,assIndex, newData});
     }
     catch{
-
+        
     }
 }
 
@@ -111,6 +111,7 @@ export const login = async (email, password) => {
         return response.data;
     }
     catch(error){
+        console.log(error);
         return [];
     }
 }
@@ -123,6 +124,7 @@ export const signMeUp = async (email, password) => {
         return response.data;
     }
     catch(error){
+        console.log(error);
         return [];
     }
 }
