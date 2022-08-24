@@ -1,5 +1,5 @@
 const axios = require('axios')
-const backend_url = 'https://sundaysbackenddomainname.com/'
+const backend_url = 'https://www.sundaysbackenddomainname.com/'
 
 function getToken() {
     const tokenString = localStorage.getItem('token');
