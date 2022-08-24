@@ -6,6 +6,13 @@ import '../Component-CSS/AddClassForm-CSS.css';
 import InputGroup from 'react-bootstrap/InputGroup';
 import {createNewClass} from '../services';
 
+function getToken() {
+    const tokenString = localStorage.getItem('token');
+    const userToken = JSON.parse(tokenString);
+    console.log(userToken);
+    return userToken;
+}
+
 export class AddClassForm extends Component {
     constructor(props){
         super(props);
@@ -25,7 +32,7 @@ export class AddClassForm extends Component {
         let classObject = {
             grade: 0,
             name: this.state.class_name,
-            user: 1,
+            user: getToken(),
         };
 
         console.log(classObject)
