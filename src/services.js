@@ -1,4 +1,5 @@
 const axios = require('axios')
+const backend_url = 'https://sundaysbackenddomainname.com/'
 
 function getToken() {
     const tokenString = localStorage.getItem('token');
@@ -7,31 +8,9 @@ function getToken() {
     return userToken;
 }
 
-export async function getAllUsers(){
-    try{
-        const response = await axios.get('http://161.35.110.5:8000/users');
-        console.log('response ', response)
-        return response.data
-    }
-    catch(error){
-        return [];
-    }
-}
-
-export const getUser = async () => {
-    try{
-        const response = await axios.get('http://161.35.110.5:8000/users/1');
-        //console.log('response ', jsonResult);
-        return response.data;
-    }
-    catch(error){
-        return [];
-    }
-}
-
 export const getClassesForUser = async (userId) => {
     try{
-        const response = await axios.get('http://161.35.110.5:8000/user-classes/', { params: { user: userId } });
+        const response = await axios.get(backend_url + 'user-classes/', { params: { user: userId } });
         return response.data;
     }
     catch(error){
@@ -41,7 +20,7 @@ export const getClassesForUser = async (userId) => {
 
 export const getAssignmentsDueThisWeek = async (userId) => {
     try{
-        const response = await axios.get('http://161.35.110.5:8000/week-assignments/',  { params: { user: userId } });
+        const response = await axios.get(backend_url + 'week-assignments/',  { params: { user: userId } });
         console.log(response.data)
         return response.data;
     }
@@ -52,7 +31,7 @@ export const getAssignmentsDueThisWeek = async (userId) => {
 
 export const createNewClass = async (classObject, assignmentTypeObjects) => {
     try{
-        const response = await axios.post('http://161.35.110.5:8000/create-class/',  {classObject, assignmentTypeObjects});
+        const response = await axios.post(backend_url + 'create-class/',  {classObject, assignmentTypeObjects});
         console.log(response)
         return response.data;
     }
@@ -63,7 +42,7 @@ export const createNewClass = async (classObject, assignmentTypeObjects) => {
 
 export const setAssCompleted = async (assignmentId) => {
     try{
-        const response = await axios.put('http://161.35.110.5:8000/set-completed/',  {assignmentId});
+        const response = await axios.put(backend_url + 'set-completed/',  {assignmentId});
         console.log(response)
         return response.data;
     }
@@ -74,7 +53,7 @@ export const setAssCompleted = async (assignmentId) => {
 
 export const updateDueDate = async (assignmentId, newDate) => {
     try{
-        const response = await axios.put('http://161.35.110.5:8000/update-due-date/',  {assignmentId, newDate});
+        const response = await axios.put(backend_url + 'update-due-date/',  {assignmentId, newDate});
         console.log(response);
         return response.data;
     }
@@ -85,7 +64,7 @@ export const updateDueDate = async (assignmentId, newDate) => {
 
 export const getAssignmentTypesForClass = async (classId) => {
     try{
-        const response = await axios.get('http://161.35.110.5:8000/get-asses-class/',  { params: { classId: classId } });
+        const response = await axios.get(backend_url + 'get-asses-class/',  { params: { classId: classId } });
         console.log(response);
         return response.data;
     }
@@ -97,7 +76,7 @@ export const getAssignmentTypesForClass = async (classId) => {
 export const updateAssignment = async (assTypeId,assIndex, newData) => {
     let tok = getToken();
     try{
-        const response = await axios.put('http://161.35.110.5:8000/update-assignment/',  {assTypeId,assIndex, newData});
+        const response = await axios.put(backend_url + 'update-assignment/',  {assTypeId,assIndex, newData});
     }
     catch{
         
@@ -106,7 +85,7 @@ export const updateAssignment = async (assTypeId,assIndex, newData) => {
 
 export const login = async (email, password) => {
     try{
-        const response = await axios.get('http://161.35.110.5:8000/log-me-in/', {params: {email: email, password: password}});
+        const response = await axios.get(backend_url + 'log-me-in/', {params: {email: email, password: password}});
         console.log(response.data)
         return response.data;
     }
@@ -119,7 +98,7 @@ export const login = async (email, password) => {
 export const signMeUp = async (email, password) => {
     console.log('hello')
     try{
-        const response = await axios.post('http://161.35.110.5:8000/sign-me-up/',  {email: email, password: password});
+        const response = await axios.post(backend_url + 'sign-me-up/',  {email: email, password: password});
         console.log(response.data)
         return response.data;
     }
