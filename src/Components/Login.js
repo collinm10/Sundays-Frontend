@@ -39,14 +39,14 @@ export default function Login() {
                 <Card className="padding m-top">
                     <Form onSubmit={(event) => {
                             const userToken = login(email, password); 
-                            userToken.then((data) => {if(userToken == -1)return; setToken(data);}); 
+                            userToken.then((data) => {if(data == -1)return; setToken(data);}); 
                         }
                     }>
                         <Form.Group className="mb-3 text-boxes" controlId="formBasicEmail">
                             <Form.Label className="login-text">Email address</Form.Label>
                             <Form.Control type="email" placeholder="Enter email" onChange={e => setEmail(e.target.value)} />
                             <Form.Text className="text-muted">
-                            We'll never share your email with anyone else.
+                            We'll never share your email with anyone else. Actually, we may.
                             </Form.Text>
                         </Form.Group>
 
