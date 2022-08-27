@@ -42,7 +42,7 @@ export default function Login() {
                         
                             const userToken = login(email, password); 
     
-                            userToken.then((data) => {console.log(data); if(data == -1)return; setToken(data);}); 
+                            userToken.then((data) => {console.log(data); if(data == -1)return; setToken(data); nav("/");}); 
                         }
                     }>
                         <Form.Group className="mb-3 text-boxes" controlId="formBasicEmail">
@@ -76,7 +76,8 @@ export default function Login() {
             <Navibar />
             <div className="login-flexbox">
                 <Card className="padding m-top">
-                    <Form onSubmit={() => {
+                    <Form onSubmit={(event) => {
+                        event.preventDefault();
                         const token = signMeUp(email, password)
                         token.then((data) => {
                             setToken(data);
