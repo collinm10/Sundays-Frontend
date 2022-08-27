@@ -18,7 +18,7 @@ function App() {
   console.log(token);
   if(!token){
     console.log("Not logged in...")
-    return <Login setToken={() => {setRefresh}} />
+    return <Login setToken={() => {setRefresh(!refresh)}} />
   }
 
   return (

@@ -42,7 +42,7 @@ export default function Login({setRefresh}) {
                         
                             const userToken = login(email, password); 
     
-                            userToken.then((data) => {console.log(data); if(data == -1)return; setToken(data); setRefresh(true);}); 
+                            userToken.then((data) => {console.log(data); if(data == -1)return; setToken(data); setRefresh();}); 
                         }
                     }>
                         <Form.Group className="mb-3 text-boxes" controlId="formBasicEmail">
@@ -81,7 +81,7 @@ export default function Login({setRefresh}) {
                         const token = signMeUp(email, password)
                         token.then((data) => {
                             setToken(data);
-                            setRefresh(true);
+                            setRefresh();
                         })
                     }}>
                         <Form.Group className="mb-3 text-boxes" controlId="formBasicEmail">
