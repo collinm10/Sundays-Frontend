@@ -1,6 +1,6 @@
 const axios = require('axios')
-const backend_url = 'https://www.sundaysbackenddomainname.com/'
-
+const backend_url = 'https://www.sundaysbackenddomainname.com/' //Production db
+//const backend_url = 'http://127.0.0.1:8000/'
 function getToken() {
     const tokenString = localStorage.getItem('token');
     const userToken = JSON.parse(tokenString);
@@ -86,12 +86,14 @@ export const updateAssignment = async (assTypeId,assIndex, newData) => {
 export const login = async (email, password) => {
     try{
         const response = await axios.get(backend_url + 'log-me-in/', {params: {email: email, password: password}});
-        console.log(response.data)
-        return response.data;
+        console.log(response)
+        if(!isNaN(response.data))
+            return response.data;
+        return -1
     }
     catch(error){
         console.log(error);
-        return [];
+        return -1;
     }
 }
 
@@ -104,6 +106,6 @@ export const signMeUp = async (email, password) => {
     }
     catch(error){
         console.log(error);
-        return [];
+        return -1;
     }
 }

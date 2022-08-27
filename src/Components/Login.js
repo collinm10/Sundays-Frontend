@@ -39,7 +39,8 @@ export default function Login() {
                 <Card className="padding m-top">
                     <Form onSubmit={(event) => {
                             const userToken = login(email, password); 
-                            userToken.then((data) => {if(data == -1)return; setToken(data);}); 
+    
+                            userToken.then((data) => {console.log(data); if(data == -1)return; setToken(data);}); 
                         }
                     }>
                         <Form.Group className="mb-3 text-boxes" controlId="formBasicEmail">
