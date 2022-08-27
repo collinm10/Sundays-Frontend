@@ -38,6 +38,8 @@ export default function Login() {
             <div className="login-flexbox">
                 <Card className="padding m-top">
                     <Form onSubmit={(event) => {
+                            event.preventDefault();
+                        
                             const userToken = login(email, password); 
     
                             userToken.then((data) => {console.log(data); if(data == -1)return; setToken(data);}); 
