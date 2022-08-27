@@ -13,10 +13,12 @@ import Navibar from './Components/Navibar';
 
 function App() {
   const token = getToken();
+  const [refresh, setRefresh] = useState(false);
+
   console.log(token);
   if(!token){
     console.log("Not logged in...")
-    return <Login  />
+    return <Login setToken={() => {setRefresh}} />
   }
 
   return (

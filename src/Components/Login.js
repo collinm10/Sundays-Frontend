@@ -18,7 +18,7 @@ function setToken(userToken){
     localStorage.setItem('token', JSON.stringify(userToken));
 }
 
-export default function Login() {
+export default function Login({setRefresh}) {
 
     const [signup, setSignup] = useState(false);
     const [email, setEmail] = useState();
@@ -42,7 +42,7 @@ export default function Login() {
                         
                             const userToken = login(email, password); 
     
-                            userToken.then((data) => {console.log(data); if(data == -1)return; setToken(data); nav("/");}); 
+                            userToken.then((data) => {console.log(data); if(data == -1)return; setToken(data); setRefresh(true);}); 
                         }
                     }>
                         <Form.Group className="mb-3 text-boxes" controlId="formBasicEmail">
@@ -81,7 +81,7 @@ export default function Login() {
                         const token = signMeUp(email, password)
                         token.then((data) => {
                             setToken(data);
-                            nav("/");
+                            setRefresh(true);
                         })
                     }}>
                         <Form.Group className="mb-3 text-boxes" controlId="formBasicEmail">
