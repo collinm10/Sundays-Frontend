@@ -107,7 +107,7 @@ class Dashboard extends React.Component{
     }
 
     render(){
-        let cards = <h1>Loading...</h1>;
+        let cards = <h1></h1>;
         if(this.state.asses_gotten){
             
             let row_count = [0, 0, 0, 0, 0, 0, 0];

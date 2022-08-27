@@ -39,7 +39,7 @@ class Classes extends React.Component{
     }
 
     render(){
-        let cards = <h1>Loading...</h1>;
+        let cards = <h1></h1>;
 
         if(this.state.classes_gotten){
 
