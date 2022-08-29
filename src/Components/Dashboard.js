@@ -1,16 +1,13 @@
 import React from 'react';
 import Navibar from './Navibar';
 import '../App.css';
-import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
-import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 import '../Component-CSS/Dashboard-CSS.css';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 import {getAssignmentsDueThisWeek, setAssCompleted, updateDueDate} from '../services';
-import { Navigate } from 'react-router-dom';
 
 function getToken() {
     const tokenString = localStorage.getItem('token');
