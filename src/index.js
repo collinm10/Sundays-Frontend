@@ -12,6 +12,7 @@ import Login from './Components/Login';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
+document.title = "Sundays";
 root.render(
   <App />
   // <BrowserRouter>
